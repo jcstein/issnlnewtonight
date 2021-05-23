@@ -9,7 +9,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `is SNL new tonight?`,
-        short_name: `is SNL new?`,
+        short_name: `SNL new?`,
         start_url: `/`,
         background_color: `#fff0f5`,
         theme_color: `#fff0f5`,
