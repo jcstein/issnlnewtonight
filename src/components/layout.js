@@ -31,8 +31,8 @@ export default function Layout({ children }) {
       <div className="flexThisBox">
       <Helmet>
           <meta charSet="utf-8" />
-          <title>Josh Stein | Portfolio</title>
-          <link rel="canonical" href="http://jcstein.dev" />
+          <title>is SNL new tonight?</title>
+          <link rel="canonical" href="http://issnlnewtonight.com" />
         </Helmet>
       <header>
         <Link to={`/`}>
@@ -46,11 +46,6 @@ export default function Layout({ children }) {
           {data.site.siteMetadata.title}
         </h3>
       </Link>
-      <ul style={{listStyle: 'none', float: 'right'}}> 
-      <ListLink to="/about/">About</ListLink> 
-      <ListLink to="/contact/">Contact</ListLink> 
-
-      </ul>
       </header>
       <main>
         {children}
@@ -63,7 +58,8 @@ export default function Layout({ children }) {
                 text-decoration: none;
                 color: inherit;
               `}
-              to={'https://www.gatsbyjs.com'}>Gatsby</Link>
+              to={'https://www.gatsbyjs.com'}>Gatsby</Link>. Made it this far? Let's solve some problems <Link to="../contact">together</Link>.
+
       </footer>
       </div>
       </Container>

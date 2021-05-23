@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Josh Stein | Portfolio`,
+    title: `is SNL new tonight?`,
     description: 'Hi, welcome to my site.',
     author: 'Josh Stein',
   },
@@ -8,8 +8,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `© Josh Stein`,
-        short_name: `© JCS`,
+        name: `is SNL new tonight?`,
+        short_name: `is SNL new?`,
         start_url: `/`,
         background_color: `#fff0f5`,
         theme_color: `#fff0f5`,
