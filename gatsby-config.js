@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `is SNL new tonight?`,
-    description: 'Hi, welcome to my site.',
+    description: 'Hi, are you always searching to see if Saturday Night Live is really LIVE? Look no further!',
     author: 'Josh Stein',
   },
   plugins: [
