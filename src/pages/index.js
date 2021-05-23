@@ -26,7 +26,7 @@ export default function Home({ data }) {
                 color: inherit;
               `}
             >
-              <h4
+              <h2
                 css={css`
                   margin-bottom: ${rhythm(1 / 4)};
                 `}
@@ -39,7 +39,7 @@ export default function Home({ data }) {
                 >
                   — {node.frontmatter.date}
                 </span>
-              </h4>
+              </h2>
               <p>{node.excerpt}</p>
             </Link>
           </div>
