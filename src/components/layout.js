@@ -58,8 +58,7 @@ export default function Layout({ children }) {
                 text-decoration: none;
                 color: inherit;
               `}
-              to={'https://www.gatsbyjs.com'}>Gatsby</Link>. Made it this far? Let's solve some problems <Link to="../contact">together</Link>.
-
+              to={'https://www.gatsbyjs.com'}>Gatsby</Link>. Let's solve some problems <Link to="../contact">together</Link>.
       </footer>
       </div>
       </Container>
