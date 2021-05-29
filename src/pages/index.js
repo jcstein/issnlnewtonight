@@ -9,7 +9,7 @@ import SEO from "../components/seo"
 export default function Home({ data }) {
   return (
        <Layout>
-  <SEO title="is SNL new tonight? App" />
+  <SEO title="is SNL new tonight?" />
       <div>
         <h1
           css={css`
