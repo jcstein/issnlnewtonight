@@ -17,7 +17,10 @@ export default function Home({ data }) {
             border-bottom: 1px solid;
           `}
         >
-         <span role="img" aria-label="wave">👋</span> is <Link to="https://www.nbc.com/saturday-night-live">Saturday Night Live</Link> new tonight?
+         <span role="img" aria-label="wave">👋</span> is <Link  css={css`
+                text-decoration: none;
+                color: inherit;
+              `} to="https://www.nbc.com/saturday-night-live">Saturday Night Live</Link> new tonight?
         </h1>
 
         {data.allMarkdownRemark.edges.map(({ node }) => (
