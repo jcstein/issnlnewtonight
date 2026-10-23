@@ -5,23 +5,10 @@
   "description": "Is Saturday Night Live new tonight? Answered in the browser from the live schedule.",
   "license": "0BSD",
   "type": "module",
-  "engines": {
-    "node": ">=22"
-  },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview --host 0.0.0.0 --port 4173",
-    "test": "vitest run"
-  },
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^4.7.0",
-    "vite": "^6.4.1",
-    "vitest": "^3.2.4"
+    "build": "node scripts/build.cjs",
+    "dev": "node scripts/build.cjs && node scripts/dev.cjs",
+    "test": "node --test src/lib/schedule.test.js"
   },
   "repository": {
     "type": "git",

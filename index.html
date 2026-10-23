@@ -10,21 +10,63 @@
     />
     <meta name="theme-color" content="#fffafa" />
     <link rel="canonical" href="https://is-snl-new-tonight.jcstein.dev/" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/icon.png" />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="apple-touch-icon" href="./icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div id="root">
-      <noscript>
-        JavaScript has to run for this one. The answer is checked in your browser against the live schedule.
-      </noscript>
+    <div class="container">
+      <div class="flexThisBox">
+        <header>
+          <a href="./">
+            <h3 class="site-title">is SNL new tonight?</h3>
+          </a>
+        </header>
+        <main>
+          <h1 class="question">
+            <span role="img" aria-label="wave">👋</span>
+            is
+            <a class="plain" href="https://www.nbc.com/saturday-night-live">Saturday Night Live</a>
+            new tonight?
+          </h1>
+          <div id="answer" aria-live="polite" data-status="loading" data-verdict="">
+            <h2>checking the calendar…</h2>
+          </div>
+          <img
+            class="featured"
+            src="./images/image.jpg"
+            width="2000"
+            height="1000"
+            alt="Lorne Michaels in a dark baseball cap."
+          />
+          <blockquote id="summary" hidden></blockquote>
+          <noscript>
+            <p>JavaScript has to run for this one. The answer is checked in your browser against the live schedule.</p>
+          </noscript>
+        </main>
+        <footer>
+          <p>
+            © <span class="year"></span> Copyright Josh Stein. Let's solve some problems
+            <a href="./contact.html">together</a>.
+          </p>
+          <p class="note">
+            Eastern Time decides the night. SNL airs Saturdays at 11:30 PM ET. Schedule from
+            <a href="https://www.tvmaze.com/shows/361/saturday-night-live">TVmaze</a>.
+          </p>
+        </footer>
+      </div>
     </div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      document.querySelectorAll(".year").forEach(function (node) {
+        node.textContent = String(new Date().getFullYear())
+      })
+    </script>
+    <script type="module" src="./app.js"></script>
   </body>
 </html>

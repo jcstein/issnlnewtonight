@@ -1,4 +1,43 @@
-import { describe, expect, it } from "vitest"
+import assert from "node:assert/strict"
+import { describe, it } from "node:test"
+
+function expect(actual) {
+  const matcher = (expected) =>
+    typeof expected === "string" ? new RegExp(expected.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")) : expected
+  return {
+    toBe(expected) {
+      assert.strictEqual(actual, expected)
+    },
+    toEqual(expected) {
+      assert.deepStrictEqual(actual, expected)
+    },
+    toBeNull() {
+      assert.strictEqual(actual, null)
+    },
+    toContain(expected) {
+      assert.ok(String(actual).includes(expected), actual + " should contain " + expected)
+    },
+    not: {
+      toContain(expected) {
+        assert.ok(!String(actual).includes(expected), actual + " should not contain " + expected)
+      },
+    },
+    toMatchObject(expected) {
+      for (const key of Object.keys(expected)) {
+        assert.deepStrictEqual(actual[key], expected[key], key)
+      }
+    },
+    toThrow(expected) {
+      assert.throws(actual, matcher(expected))
+    },
+    rejects: {
+      toThrow(expected) {
+        return assert.rejects(actual, matcher(expected))
+      },
+    },
+  }
+}
+
 import {
   OFF_SEASON_GAP_DAYS,
   addDays,

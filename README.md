@@ -7,7 +7,6 @@ Saturday Night Live airs Saturdays at 11:30 PM Eastern. The page decides "tonigh
 ## Develop
 
 ```shell
-npm install
 npm test
 npm run dev
 ```
@@ -18,14 +17,16 @@ Production build:
 npm run build
 ```
 
-The site is static files in `dist/`. Node 22.
+That writes the same site to `dist/` and `public/`. There are no runtime dependencies. Node 22 runs the tests. The copy step is plain Node, so an older Pages image can still publish it.
 
 ## Cloudflare Pages
 
-This stays on the existing Pages project (`main`).
+This stays on the existing Pages project (production branch `main`).
 
 - Build command: `npm run build`
-- Output directory: `dist`
-- Node.js: 22 (`.node-version`)
+- Output directory: `public`
+- Node.js: 22 when the project can set it (`.node-version` and `.nvmrc`)
 
-Pages installs dependencies before the build command. The previous command (`rm -rf node_modules && npm install --legacy-peer-deps --no-audit --no-fund && npm run build`) was there because `node_modules` used to be committed, and Gatsby wrote to `public/`. That output directory has to change to `dist`, or the deploy publishes an empty folder.
+`public` is the directory this Gatsby project already publishes, so that setting does not have to change. `dist/` is the same files if the output directory is switched later. The previous build command (`rm -rf node_modules && npm install --legacy-peer-deps --no-audit --no-fund && npm run build`) still ends in `npm run build` and works.
+
+Preview and production environment variables are separate. Set `NODE_VERSION` to `22` on both if a build image is still pinned to an older Node.

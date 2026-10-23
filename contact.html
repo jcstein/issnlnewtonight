@@ -4,22 +4,74 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>contact | is SNL new tonight?</title>
-    <meta
-      name="description"
-      content="Say hello. This is the contact page for is SNL new tonight?"
-    />
+    <meta name="description" content="Say hello. This is the contact page for is SNL new tonight?" />
     <meta name="theme-color" content="#fffafa" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/icon.png" />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="apple-touch-icon" href="./icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div class="container">
+      <div class="flexThisBox">
+        <header>
+          <a href="./">
+            <h3 class="site-title">is SNL new tonight?</h3>
+          </a>
+        </header>
+        <main>
+          <h1>Contact Me</h1>
+          <form
+            method="post"
+            action="https://getform.io/f/74f2c1f5-b61e-4085-b274-ff32bb4ab989"
+            enctype="multipart/form-data"
+          >
+            <label for="name">
+              Name
+              <input type="text" name="name" id="name" />
+            </label>
+            <label for="email">
+              Email
+              <input type="email" name="email" id="email" />
+            </label>
+            <label for="subject">
+              Subject
+              <input type="text" name="subject" id="subject" />
+            </label>
+            <label for="message">
+              Message
+              <textarea name="message" id="message" rows="3"></textarea>
+            </label>
+            <p>
+              <input type="file" name="file" aria-label="Attachment" />
+            </p>
+            <p>
+              <button type="submit">Send</button>
+              <input type="reset" value="Clear" />
+            </p>
+          </form>
+        </main>
+        <footer>
+          <p>
+            © <span class="year"></span> Copyright Josh Stein. Let's solve some problems
+            <a href="./contact.html">together</a>.
+          </p>
+          <p class="note">
+            Eastern Time decides the night. SNL airs Saturdays at 11:30 PM ET. Schedule from
+            <a href="https://www.tvmaze.com/shows/361/saturday-night-live">TVmaze</a>.
+          </p>
+        </footer>
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll(".year").forEach(function (node) {
+        node.textContent = String(new Date().getFullYear())
+      })
+    </script>
   </body>
 </html>
